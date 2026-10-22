@@ -1,0 +1,24 @@
+//tabla users
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+
+//table tasks
+CREATE TABLE tasks (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(150) NOT NULL,
+  description TEXT,
+  due_date DATE,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+
+//Seguridad
+ALTER TABLE users ENABLE ROW LEVEL SECURITY;
+ALTER TABLE tasks ENABLE ROW LEVEL SECURITY;

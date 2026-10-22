@@ -1,8 +1,13 @@
-//Bienvenida
+### Bienvenida
 GET http://localhost:4000/
-//ping
+
+### ping
 GET http://localhost:4000/ping
 
 
-//ruta que no existe
+### ruta que no existe
 GET http://localhost:4000/no-existe
+
+
+### REGISTRO(prueba inicial)    
+POST http://localhost:4000/api/auth/register 
