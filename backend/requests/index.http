@@ -9,5 +9,12 @@ GET http://localhost:4000/ping
 GET http://localhost:4000/no-existe
 
 
-### REGISTRO(prueba inicial)    
+###REGISTRO(prueba inicial)    
 POST http://localhost:4000/api/auth/register 
+Content-type: application/json
+
+{
+    "username": "ana",
+    "email": "ana@correo.com"
+    "password": "123456"
+}
