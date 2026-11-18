@@ -3,10 +3,12 @@ import express from "express";
 import morgan from "morgan";
 import indexRoutes from "./routes/index.routes.js";
 import tasksRoutes from "./routes/tasks.routes.js";
+import cors from "cors";
 
 const app = express();
 
 // Middlewares
+app.use(cors({origin: "http://localhost:5173"}));
 app.use(morgan("dev"));
 app.use(express.json());
 
